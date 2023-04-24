@@ -14,6 +14,11 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
   int currentPage = 0;
 
+  String imageUrl = 'https://example.com/product-image.jpg';
+  String productName = 'Product Name';
+  String description = 'Product Description';
+  double price = 9.99;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,15 +166,14 @@ class _NavigationPageState extends State<NavigationPage> {
                     ),
                   ],
                 ),
-
               ),
               Container(
                 margin: EdgeInsets.all(16.0), // Set the margin for the card
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                       20.0), // Set the corner radius for the card
-                  color: Colors
-                      .pinkAccent, // Set the background color of the card
+                  color:
+                      Colors.pinkAccent, // Set the background color of the card
                   boxShadow: const [
                     BoxShadow(
                       color: Colors.grey, // Set the shadow color of the card
@@ -183,10 +187,10 @@ class _NavigationPageState extends State<NavigationPage> {
                   children: [
                     Card(
                       elevation: 4.0, // Set the elevation of the card
-                      shadowColor: Colors
-                          .pinkAccent, // Set the shadow color of the card
-                      color: Colors
-                          .pink, // Set the background color of the card
+                      shadowColor:
+                          Colors.pinkAccent, // Set the shadow color of the card
+                      color:
+                          Colors.pink, // Set the background color of the card
                       child: Column(
                         children: [
                           ClipRRect(
@@ -211,8 +215,8 @@ class _NavigationPageState extends State<NavigationPage> {
                                 SizedBox(height: 8.0),
                                 Text(
                                   'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-                                  style: TextStyle(fontSize: 16.0,
-                                  color: Colors.white),
+                                  style: TextStyle(
+                                      fontSize: 16.0, color: Colors.white),
                                 ),
                                 SizedBox(height: 16.0),
                                 Container(
@@ -240,7 +244,6 @@ class _NavigationPageState extends State<NavigationPage> {
                     ),
                   ],
                 ),
-
               ),
               Container(
                 margin: EdgeInsets.all(16.0), // Set the margin for the card
@@ -317,7 +320,43 @@ class _NavigationPageState extends State<NavigationPage> {
                     ),
                   ],
                 ),
-
+              ),
+              Card(
+                elevation: 2.0,
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.network(imageUrl),
+                      SizedBox(height: 8.0),
+                      Text(
+                        productName,
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4.0),
+                      Text(
+                        description,
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text(
+                        '\$$price',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
